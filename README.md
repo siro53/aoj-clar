@@ -3,9 +3,10 @@
 - threadが追加されたら通知するだけで、threadにコメントがついても通知されないことに注意
 
 # 使い方
-- config.pyに設定を追記する。
 
 ![](https://i.imgur.com/FGzKeFg.png)
+
+- config.pyに設定を追記する。
     - **ARENA_ID**には、コンテストページ上部のID以下を追記
     ![](https://i.imgur.com/yvAtTsu.png)
     - **AOJ_ID, AOJ_PASS**にはそれぞれAOJのID、パスワードを追記
