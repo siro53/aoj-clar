@@ -1,0 +1,1 @@
+aoj-clar: python3 main.py
