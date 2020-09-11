@@ -4,6 +4,7 @@
 
 # 使い方
 - config.pyに設定を追記する。
+
 ![](https://i.imgur.com/FGzKeFg.png)
     - **ARENA_ID**には、コンテストページ上部のID以下を追記
     ![](https://i.imgur.com/yvAtTsu.png)
