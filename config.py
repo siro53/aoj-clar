@@ -1,5 +1,5 @@
-ARENA_ID = 'KUPC2020Spring'  # contest id
-AOJ_ID = 'shiro53'  # username
-AOJ_PASS = 'Shiropro_53'  # password
-SLACK_HOOK_URL = 'https://hooks.slack.com/services/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'
+ARENA_ID = 'WUPC'  # contest id
+AOJ_ID = 'userid'  # username
+AOJ_PASS = 'userpass'  # password
+SLACK_HOOK_URL = 'webhook_url'
 SLEEP_TIME = 30
