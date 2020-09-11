@@ -49,7 +49,7 @@ def get_thread_list(arena_id, page, size):
 
 def main():
     login(config.AOJ_ID, config.AOJ_PASS)
-    lsz = -1
+    lsz = 0
     while True:
         thread_list = get_thread_list(config.ARENA_ID, 1, 20)
         if lsz < len(thread_list):
