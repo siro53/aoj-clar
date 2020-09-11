@@ -1,5 +1,5 @@
 # これは何
-- AOJ(Arena)のboardにthreadが追加されたらチャンネルに通知を飛ばすアプリ
+- AOJ(Arena)のboardにthreadが追加されたらslackのチャンネルに通知を飛ばすアプリ
 - threadが追加されたら通知するだけで、threadにコメントがついても通知されないことに注意
 
 # 使い方
