@@ -103,8 +103,8 @@ def checker(now_threads):
             for now_thread in now_threads[c]:
                 if new_thread['id'] == now_thread['id']:
                     # 新しいコメントが増えてるかどうかチェック
-                    now_comments = now_thread['rootComment']
-                    new_comments = new_thread['rootComment']
+                    now_comments = now_thread['rootComment']['responseComments']
+                    new_comments = new_thread['rootComment']['responseComments']
                     for new_cm in new_comments:
                         flag = False
                         for now_cm in now_comments:
