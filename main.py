@@ -39,7 +39,6 @@ def get_thread_list(arena_id, page, size):
 
     if response.status_code == 200:
         print("ok. You got thread list.")
-        print(response.json())
     else:
         print("error: failed to get thread list")
         sys.exit()
@@ -47,18 +46,23 @@ def get_thread_list(arena_id, page, size):
     return response.json()
 
 
+def make_text(dic):
+    return {
+        'text': '新しいスレッドが追加されました！確認してください。\nproblemId: {0}\n userId: {1}\npolicy: {2}\ntype: {3}\ntitle: {4}\nhttps://onlinejudge.u-aizu.ac.jp/beta/room.html#WUPC2020/board'.format(dic['problemId'], dic['userId'], dic['policy'], dic['type'], dic['title'])
+    }
+
+
 def main():
     login(config.AOJ_ID, config.AOJ_PASS)
-    lsz = 0
+    now = []
     while True:
         thread_list = get_thread_list(config.ARENA_ID, 1, 20)
-        if lsz < len(thread_list):
-            dic = thread_list[-1]
-            messages = {
-                'text': '新しいスレッドが追加されました！確認してください。\nproblemId: {0}\n userId: {1}\npolicy: {2}\ntype: {3}\ntitle: {4}\nhttps://onlinejudge.u-aizu.ac.jp/beta/room.html#WUPC2020/board'.format(dic['problemId'], dic['userId'], dic['policy'], dic['type'], dic['title'])
-            }
-            requests.post(config.SLACK_HOOK_URL, json=messages)
-        lsz = len(thread_list)
+        for dic in thread_list:
+            if dic in now:
+                continue
+            messages = make_text(dic)
+            requests.post(url=config.SLACK_HOOK_URL, json=messages)
+        now = thread_list
         time.sleep(config.SLEEP_TIME)
 
 
