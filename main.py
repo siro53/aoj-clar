@@ -137,6 +137,8 @@ def main():
 
     now_threads[''] = list()
 
+    requests.post(config.SLACK_HOOK_URL, json={'text': '監視を開始します'})
+
     while True:
         print('update')
         checker(now_threads)
